@@ -9,7 +9,7 @@ func _ready():
 
 
 func _on_otevriInventar_pressed():
-	emit_signal("otevriInventar")
+	emit_signal("oteviramInventar")
 
 func _on_otevriPostavu_pressed():
 	emit_signal("oteviramPostavu")

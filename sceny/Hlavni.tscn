@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://sceny/hrac.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sceny/Hlavni.gd" type="Script" id=2]
 [ext_resource path="res://sceny/ovladani.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sceny/Inventar.tscn" type="PackedScene" id=4]
 
 [node name="Hlavni" type="Node"]
 script = ExtResource( 2 )
@@ -14,3 +15,7 @@ margin_left = 1193.37
 margin_top = 631.543
 margin_right = 1258.37
 margin_bottom = 699.543
+
+[node name="Inventar" parent="." instance=ExtResource( 4 )]
+[connection signal="oteviramInventar" from="Ovladani" to="." method="_on_Ovladani_oteviramInventar"]
+[connection signal="zaviramInventar" from="Inventar" to="." method="_on_Inventar_zaviramInventar"]
