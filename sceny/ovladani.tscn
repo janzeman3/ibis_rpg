@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sceny/ovladani.gd" type="Script" id=1]
+
+[node name="Ovladani" type="GridContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="otevriInventar" type="Button" parent="."]
+margin_right = 65.0
+margin_bottom = 20.0
+text = "Inventar"
+
+[node name="otevriPostavu" type="Button" parent="."]
+margin_top = 24.0
+margin_right = 65.0
+margin_bottom = 44.0
+text = "Postava"
+
+[node name="otevriQuesty" type="Button" parent="."]
+margin_top = 48.0
+margin_right = 65.0
+margin_bottom = 68.0
+text = "Questy"
+[connection signal="pressed" from="otevriInventar" to="." method="_on_otevriInventar_pressed"]
+[connection signal="pressed" from="otevriPostavu" to="." method="_on_otevriPostavu_pressed"]
+[connection signal="pressed" from="otevriQuesty" to="." method="_on_otevriQuesty_pressed"]
