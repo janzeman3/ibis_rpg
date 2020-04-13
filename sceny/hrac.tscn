@@ -1,18 +1,45 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://grafika/postavy/archer/archer _2_3.png" type="Texture" id=1]
 [ext_resource path="res://sceny/hrac.gd" type="Script" id=2]
+[ext_resource path="res://grafika/postavy/archer/archer _3_2.png" type="Texture" id=3]
+[ext_resource path="res://grafika/postavy/archer/archer _2_1.png" type="Texture" id=4]
+[ext_resource path="res://grafika/postavy/archer/archer _2_2.png" type="Texture" id=5]
+[ext_resource path="res://grafika/postavy/archer/archer _3_1.png" type="Texture" id=6]
+[ext_resource path="res://grafika/postavy/archer/archer _1_3.png" type="Texture" id=7]
+[ext_resource path="res://grafika/postavy/archer/archer _1_2.png" type="Texture" id=8]
+[ext_resource path="res://grafika/postavy/archer/archer _4_2.png" type="Texture" id=9]
+[ext_resource path="res://grafika/postavy/archer/archer _1_1.png" type="Texture" id=10]
+[ext_resource path="res://grafika/postavy/archer/archer _3_3.png" type="Texture" id=11]
+[ext_resource path="res://grafika/postavy/archer/archer _4_1.png" type="Texture" id=12]
+[ext_resource path="res://grafika/postavy/archer/archer _4_3.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "default",
-"speed": 5.0
+"name": "dolu",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "doprava",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "doleva",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 9 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "nahoru",
+"speed": 25.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 29, 30 )
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 20.0
+height = 28.0
 
 [node name="Hrac" type="Area2D"]
 script = ExtResource( 2 )
@@ -22,6 +49,8 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
+animation = "dolu"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 4 )
 shape = SubResource( 2 )
