@@ -10,6 +10,10 @@
 [node name="Hlavni" type="Node"]
 script = ExtResource( 2 )
 
+[node name="Mapy" parent="." instance=ExtResource( 6 )]
+
+[node name="Hrac" parent="." instance=ExtResource( 1 )]
+
 [node name="Ovladani" parent="." instance=ExtResource( 3 )]
 margin_left = 1193.37
 margin_top = 631.543
@@ -19,10 +23,6 @@ margin_bottom = 699.543
 [node name="Inventar" parent="." instance=ExtResource( 4 )]
 
 [node name="Postava" parent="." instance=ExtResource( 5 )]
-
-[node name="Mapy" parent="." instance=ExtResource( 6 )]
-
-[node name="Hrac" parent="." instance=ExtResource( 1 )]
 [connection signal="oteviramInventar" from="Ovladani" to="." method="_on_Ovladani_oteviramInventar"]
 [connection signal="oteviramPostavu" from="Ovladani" to="." method="_on_Ovladani_oteviramPostavu"]
 [connection signal="zaviramInventar" from="Inventar" to="." method="_on_Inventar_zaviramInventar"]

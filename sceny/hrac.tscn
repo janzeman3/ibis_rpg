@@ -49,6 +49,7 @@ __meta__ = {
 
 [node name="Lucisnik" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
+animation = "dolu"
 
 [node name="Mag" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )

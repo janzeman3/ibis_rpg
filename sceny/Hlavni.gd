@@ -4,6 +4,10 @@ func _ready():
 	$Inventar.hide()
 	$Postava.hide()
 
+	$Hrac.position.x = 32
+	$Hrac.position.y = 10*32-16
+	$Hrac.show()
+
 func _on_Ovladani_oteviramInventar():
 	$Ovladani.hide()
 	$Inventar.show()
