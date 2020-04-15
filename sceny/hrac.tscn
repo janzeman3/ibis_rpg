@@ -47,9 +47,17 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="Lucisnik" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "dolu"
+
+[node name="Mag" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+
+[node name="Mag2" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+
+[node name="Mag3" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 4 )
