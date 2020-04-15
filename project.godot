@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Nový Projekt Hry"
+config/name="Black of World"
 run/main_scene="res://sceny/Hlavni.tscn"
 config/icon="res://icon.png"
 
