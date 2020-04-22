@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://grafika/mapy/dlazdice1.png" type="Texture" id=1]
+[ext_resource path="res://sceny/Mapy.gd" type="Script" id=2]
 
 [sub_resource type="TileSet" id=1]
 0/name = "dlazdice1.png 0"
@@ -1153,6 +1154,7 @@
 81/z_index = 0
 
 [node name="Mapy" type="Node"]
+script = ExtResource( 2 )
 
 [node name="Mapa1" type="TileMap" parent="."]
 position = Vector2( 0.172993, -0.168402 )

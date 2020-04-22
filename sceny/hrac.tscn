@@ -48,6 +48,7 @@ __meta__ = {
 }
 
 [node name="Lucisnik" type="AnimatedSprite" parent="."]
+position = Vector2( 0.875961, -32.9948 )
 frames = SubResource( 1 )
 animation = "dolu"
 
@@ -61,5 +62,5 @@ frames = SubResource( 1 )
 frames = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 4 )
+position = Vector2( -0.875961, -27.8268 )
 shape = SubResource( 2 )

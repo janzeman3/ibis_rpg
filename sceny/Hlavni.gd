@@ -21,3 +21,10 @@ func _on_Postava_zaviramPostavu():
 func _on_Ovladani_oteviramPostavu():
 	$Ovladani.hide()
 	$Postava.show()
+
+func _process(delta):
+	var kamChceHrac = $Hrac.kamChciJit(delta)
+	
+	if $Mapy.jeVolno(kamChceHrac):
+		$Hrac.position = kamChceHrac
+

@@ -6,8 +6,9 @@ var velikostOkna  # Size of the game window.
 func _ready():
 	velikostOkna = get_viewport_rect().size
 
-func _process(delta):
+func kamChciJit(delta):
 	var smerPohybu = Vector2()  # The player's movement vector.
+	var novaPozice = Vector2() 
 	if Input.is_action_pressed("ui_right"):
 		smerPohybu.x += 1
 		$Lucisnik.animation = "doprava"
@@ -26,6 +27,10 @@ func _process(delta):
 	else:
 		$Lucisnik.stop()
 
-	position += smerPohybu * delta
-	position.x = clamp(position.x, 0, velikostOkna.x)
-	position.y = clamp(position.y, 0, velikostOkna.y)
+	novaPozice = position + smerPohybu * delta
+
+	novaPozice.x = clamp(novaPozice.x, 0, velikostOkna.x)
+	novaPozice.y = clamp(novaPozice.y, 0, velikostOkna.y)
+
+	return novaPozice
+
