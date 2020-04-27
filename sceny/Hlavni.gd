@@ -27,4 +27,6 @@ func _process(delta):
 	
 	if $Mapy.jeVolno(kamChceHrac):
 		$Hrac.position = kamChceHrac
+	
+	$Ladeni.setPozice($Hrac.position)
 
