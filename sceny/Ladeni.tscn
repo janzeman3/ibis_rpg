@@ -5,10 +5,29 @@
 [node name="Ladeni" type="GridContainer"]
 margin_top = 720.0
 margin_bottom = 720.0
+columns = 10
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Pozice" type="Label" parent="."]
-margin_bottom = 14.0
+margin_top = 3.0
+margin_bottom = 17.0
+
+[node name="Lucistnik" type="Button" parent="."]
+margin_left = 4.0
+margin_right = 73.0
+margin_bottom = 20.0
+text = "Lucistnik"
+
+[node name="Mag" type="Button" parent="."]
+margin_left = 77.0
+margin_right = 115.0
+margin_bottom = 20.0
+text = "Mag"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Lucistnik" to="." method="_on_Lucistnik_pressed"]
+[connection signal="pressed" from="Mag" to="." method="_on_Mag_pressed"]

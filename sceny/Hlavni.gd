@@ -1,12 +1,15 @@
 extends Node
 
+enum typy_postavy{
+  Lucistnik,
+  Mag
+}
+
 func _ready():
 	$Inventar.hide()
 	$Postava.hide()
 
-	$Hrac.position.x = 32
-	$Hrac.position.y = 10*32-16
-	$Hrac.show()
+	$Hrac.setPozice(Vector2(32, 10*32-16))
 
 func _on_Ovladani_oteviramInventar():
 	$Ovladani.hide()
@@ -26,7 +29,4 @@ func _process(delta):
 	var kamChceHrac = $Hrac.kamChciJit(delta)
 	
 	if $Mapy.jeVolno(kamChceHrac):
-		$Hrac.position = kamChceHrac
-	
-	$Ladeni.setPozice($Hrac.position)
-
+		$Hrac.setPozice(kamChceHrac)
