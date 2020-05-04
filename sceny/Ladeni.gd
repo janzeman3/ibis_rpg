@@ -6,7 +6,7 @@ enum charaktery{
 }
 
 func _process(delta):
-	$Pozice.text = str(get_node("../Hrac/Lucistnik").position)
+	$Pozice.text = str(get_node("../Hrac").aktivniTyp.position)
 
 func _on_Lucistnik_pressed():
 	var hrac = get_node("../Hrac")

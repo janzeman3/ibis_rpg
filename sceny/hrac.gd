@@ -9,7 +9,7 @@ export var rychlost = 400  # How fast the player will move (pixels/sec).
 export var typ = charaktery.Lucistnik
 
 var velikostOkna  # Size of the game window.
-onready var aktivniTyp = get_node("Lucistnik")
+export onready var aktivniTyp = get_node("Lucistnik")
 
 func _ready():
 	velikostOkna = get_viewport_rect().size
