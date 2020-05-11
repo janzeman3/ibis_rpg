@@ -30,3 +30,4 @@ func _process(delta):
 	
 	if $Mapy.jeVolno(kamChceHrac):
 		$Hrac.setPozice(kamChceHrac)
+		$Mapy.hrac_zmenil_pozici(kamChceHrac)
