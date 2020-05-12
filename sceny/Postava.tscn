@@ -21,30 +21,69 @@ __meta__ = {
 }
 
 [node name="Titulek" type="Label" parent="GridContainer"]
-margin_right = 49.0
+margin_right = 75.0
 margin_bottom = 14.0
 text = "Postava"
 
 [node name="GridContainer" type="GridContainer" parent="GridContainer"]
 margin_top = 18.0
-margin_right = 49.0
-margin_bottom = 32.0
+margin_right = 75.0
+margin_bottom = 86.0
 columns = 2
 
 [node name="labXP" type="Label" parent="GridContainer/GridContainer"]
-margin_right = 24.0
+margin_right = 50.0
 margin_bottom = 14.0
 text = "XP: "
 
 [node name="valXP" type="Label" parent="GridContainer/GridContainer"]
-margin_left = 28.0
-margin_right = 36.0
+margin_left = 54.0
+margin_right = 75.0
 margin_bottom = 14.0
 text = "0"
 
-[node name="Zavrit" type="Button" parent="GridContainer"]
+[node name="labHP" type="Label" parent="GridContainer/GridContainer"]
+margin_top = 18.0
+margin_right = 50.0
+margin_bottom = 32.0
+text = "HP: "
+
+[node name="valHP" type="Label" parent="GridContainer/GridContainer"]
+margin_left = 54.0
+margin_top = 18.0
+margin_right = 75.0
+margin_bottom = 32.0
+text = "0/0"
+
+[node name="labUC" type="Label" parent="GridContainer/GridContainer"]
 margin_top = 36.0
-margin_right = 49.0
-margin_bottom = 56.0
+margin_right = 50.0
+margin_bottom = 50.0
+text = "Útok:"
+
+[node name="valUC" type="Label" parent="GridContainer/GridContainer"]
+margin_left = 54.0
+margin_top = 36.0
+margin_right = 75.0
+margin_bottom = 50.0
+text = "0"
+
+[node name="labOC" type="Label" parent="GridContainer/GridContainer"]
+margin_top = 54.0
+margin_right = 50.0
+margin_bottom = 68.0
+text = "Obrana:"
+
+[node name="valOC" type="Label" parent="GridContainer/GridContainer"]
+margin_left = 54.0
+margin_top = 54.0
+margin_right = 75.0
+margin_bottom = 68.0
+text = "0"
+
+[node name="Zavrit" type="Button" parent="GridContainer"]
+margin_top = 90.0
+margin_right = 75.0
+margin_bottom = 110.0
 text = "Zavrit"
 [connection signal="pressed" from="GridContainer/Zavrit" to="." method="_on_Zavrit_pressed"]

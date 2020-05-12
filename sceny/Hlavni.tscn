@@ -26,6 +26,14 @@ margin_bottom = 699.543
 [node name="Postava" parent="." instance=ExtResource( 5 )]
 
 [node name="Ladeni" parent="." instance=ExtResource( 7 )]
+
+[node name="Log" type="ItemList" parent="."]
+margin_top = -1.0
+margin_right = 164.0
+margin_bottom = 177.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="oteviramInventar" from="Ovladani" to="." method="_on_Ovladani_oteviramInventar"]
 [connection signal="oteviramPostavu" from="Ovladani" to="." method="_on_Ovladani_oteviramPostavu"]
 [connection signal="zaviramInventar" from="Inventar" to="." method="_on_Inventar_zaviramInventar"]

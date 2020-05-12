@@ -31,3 +31,8 @@ func _process(delta):
 	if $Mapy.jeVolno(kamChceHrac):
 		$Hrac.setPozice(kamChceHrac)
 		$Mapy.hrac_zmenil_pozici(kamChceHrac)
+
+func addToLog(ttext):
+	$Log.add_item(ttext)
+	$Log.select($Log.get_item_count()-1)
+	$Log.ensure_current_is_visible()

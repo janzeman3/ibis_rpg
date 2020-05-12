@@ -10,3 +10,6 @@ func _on_Zavrit_pressed():
 
 func _process(delta):
 	$GridContainer/GridContainer/valXP.text = str(Hrac.XP)
+	$GridContainer/GridContainer/valHP.text = str(Hrac.HP) + "/" + str(Hrac.maxHP)
+	$GridContainer/GridContainer/valUC.text = str(Hrac.UC)
+	$GridContainer/GridContainer/valOC.text = str(Hrac.OC)
