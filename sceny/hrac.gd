@@ -8,6 +8,9 @@ enum charaktery{
 export var rychlost = 400  # How fast the player will move (pixels/sec).
 export var typ = charaktery.Lucistnik
 
+# vlastnosti postavy
+export var XP = 0
+
 var velikostOkna  # Size of the game window.
 export onready var aktivniTyp = get_node("Lucistnik")
 

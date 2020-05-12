@@ -28,3 +28,4 @@ frames = SubResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.31761, -25.2979 )
 shape = SubResource( 2 )
+[connection signal="area_entered" from="." to="." method="_on_nemrtvy_noob_area_entered"]

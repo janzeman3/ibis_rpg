@@ -13,7 +13,7 @@ __meta__ = {
 
 [node name="GridContainer" type="GridContainer" parent="."]
 margin_left = 5.0
-margin_top = 670.0
+margin_top = 500.0
 margin_right = 195.0
 margin_bottom = 715.0
 __meta__ = {
@@ -25,9 +25,26 @@ margin_right = 49.0
 margin_bottom = 14.0
 text = "Postava"
 
-[node name="Zavrit" type="Button" parent="GridContainer"]
+[node name="GridContainer" type="GridContainer" parent="GridContainer"]
 margin_top = 18.0
 margin_right = 49.0
-margin_bottom = 38.0
+margin_bottom = 32.0
+columns = 2
+
+[node name="labXP" type="Label" parent="GridContainer/GridContainer"]
+margin_right = 24.0
+margin_bottom = 14.0
+text = "XP: "
+
+[node name="valXP" type="Label" parent="GridContainer/GridContainer"]
+margin_left = 28.0
+margin_right = 36.0
+margin_bottom = 14.0
+text = "0"
+
+[node name="Zavrit" type="Button" parent="GridContainer"]
+margin_top = 36.0
+margin_right = 49.0
+margin_bottom = 56.0
 text = "Zavrit"
 [connection signal="pressed" from="GridContainer/Zavrit" to="." method="_on_Zavrit_pressed"]
