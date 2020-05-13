@@ -39,9 +39,7 @@ func _process(delta):
 		$Mapy.hrac_zmenil_pozici(kamChceHrac)
 
 func addToLog(ttext):
-	$Log.add_item(ttext)
-	$Log.select($Log.get_item_count()-1)
-	$Log.ensure_current_is_visible()
+	$Log.addToLog(ttext)
 
 func pridejXP(newXP):
 	$Hrac.XP += newXP
