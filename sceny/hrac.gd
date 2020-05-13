@@ -72,31 +72,3 @@ func setTyp(co):
 	vsechnoSkryj()
 	zmenAktivniTyp(co)
 	aktivniTyp.visible = true
-
-func kostka():
-	var padlo = randi()%6+1
-	var vysledek = padlo
-	while padlo == 6:
-		padlo = randi()%6+1
-		vysledek += padlo
-	return vysledek
-
-func boj(souperUC, souperOC):
-	get_node("/root/Hlavni").addToLog("Fight:")
-
-	# utok na hrace
-	var utokNaHrace = souperUC + kostka() - (OC + kostka())
-	if utokNaHrace > 0:
-		HP = HP - utokNaHrace
-		get_node("/root/Hlavni").addToLog("- Zranění -" + str(utokNaHrace) + "HP")
-	else:
-		get_node("/root/Hlavni").addToLog("- Bez zranění!")
-
-	# utok na soupere
-	var utokNaSoupere = UC + kostka() - (souperOC + kostka())
-	if utokNaSoupere > 0:
-		get_node("/root/Hlavni").addToLog("- Zásah " + str(utokNaSoupere) + "HP")
-		return utokNaSoupere
-	else:
-		get_node("/root/Hlavni").addToLog("- Minuls")
-		return 0

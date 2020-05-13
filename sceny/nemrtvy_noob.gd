@@ -1,19 +1,20 @@
 extends Area2D
 
-export var XP = 10
-export var HP = 10
-export var UC = 5
-export var OC = 5
+# verejne vlastnosti monstra
+export var XP = 10 # ziskane zkusenosti pri zabiti
+export var HP = 10 # zivoty
+export var UC = 5  # utocne cislo
+export var OC = 5  # obranne cislo
 
-onready var Hrac = get_node("/root/Hlavni/Hrac")
-onready var HracArea = Hrac.aktivniTyp
+# interni promenne
+onready var Hlavni = get_node("/root/Hlavni") # odkaz na hlavni scenu
 
+# pri kolizi volama centralni zpracovani kolizi
 func _on_nemrtvy_noob_area_entered(area):
-	if area==HracArea:
-		HP = HP - Hrac.boj(UC, OC)
+	Hlavni.kolizeSMonstrem(self, area)
 
 func _process(delta):
-	# pokud nemas zivoty zemri
+	# pokud nemas zivoty zemri a odevzdej XP
 	if HP <= 0:
-		Hrac.XP += XP
+		Hlavni.pridejXP(XP)
 		queue_free()
