@@ -1,13 +1,31 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://grafika/monstra/nemrtvy noob/nemrtví noob_1_1.png" type="Texture" id=1]
 [ext_resource path="res://sceny/nemrtvy_noob.gd" type="Script" id=2]
+[ext_resource path="res://grafika/monstra/nemrtvy noob/nemrtví noob_4_1.png" type="Texture" id=3]
+[ext_resource path="res://grafika/monstra/nemrtvy noob/nemrtví noob_2_1.png" type="Texture" id=4]
+[ext_resource path="res://grafika/monstra/nemrtvy noob/nemrtví noob_3_1.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "default",
+"name": "dolu",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "doprava",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "doleva",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "nahoru",
 "speed": 5.0
 } ]
 
@@ -24,6 +42,7 @@ __meta__ = {
 [node name="Animace" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -28.4602 )
 frames = SubResource( 1 )
+animation = "dolu"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.31761, -25.2979 )
