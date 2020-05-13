@@ -29,19 +29,26 @@ func kamChciJit(delta):
 	
 	if Input.is_action_pressed("ui_right"):
 		smerPohybu.x += 1
-		animace.animation = "doprava"
 	if Input.is_action_pressed("ui_left"):
 		smerPohybu.x -= 1
-		animace.animation = "doleva"
 	if Input.is_action_pressed("ui_down"):
 		smerPohybu.y += 1
-		animace.animation = "dolu"
 	if Input.is_action_pressed("ui_up"):
 		smerPohybu.y -= 1
-		animace.animation = "nahoru"
 	if smerPohybu.length() > 0:
 		smerPohybu = smerPohybu.normalized() * rychlost
 		animace.play()
+	
+		if abs(smerPohybu.x) > abs(smerPohybu.y):
+			if smerPohybu.x > 0:
+				animace.animation = "doprava"
+			else:
+				animace.animation = "doleva"
+		else:
+			if smerPohybu.y > 0:
+				animace.animation = "dolu"
+			else:
+				animace.animation = "nahoru"	
 	else:
 		animace.stop()
 
