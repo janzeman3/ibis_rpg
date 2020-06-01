@@ -5,8 +5,11 @@ enum charaktery{
   Mag
 }
 
-export var rychlost = 400  # How fast the player will move (pixels/sec).
+export var rychlost = 200  # How fast the player will move (pixels/sec).
 export var typ = charaktery.Lucistnik
+
+var cil = Vector2(0, 0)
+var smer = Vector2(0, 0)
 
 # vlastnosti postavy
 export var UC = 10 # utocne cislo (melo by se nejak pocitat)
@@ -22,37 +25,39 @@ func _ready():
 	velikostOkna = get_viewport_rect().size
 	aktivniTyp.visible = true
 
+func _input(event):
+	if event is InputEventMouseButton:
+		cil = event.position
+
+func _process(delta):
+	pass
+
 func kamChciJit(delta):
-	var smerPohybu = Vector2()  # The player's movement vector.
 	var novaPozice = Vector2() 
 	var animace = aktivniTyp.get_node("AnimatedSprite")
 	
-	if Input.is_action_pressed("ui_right"):
-		smerPohybu.x += 1
-	if Input.is_action_pressed("ui_left"):
-		smerPohybu.x -= 1
-	if Input.is_action_pressed("ui_down"):
-		smerPohybu.y += 1
-	if Input.is_action_pressed("ui_up"):
-		smerPohybu.y -= 1
-	if smerPohybu.length() > 0:
-		smerPohybu = smerPohybu.normalized() * rychlost
-		animace.play()
+	smer = cil - aktivniTyp.position
 	
-		if abs(smerPohybu.x) > abs(smerPohybu.y):
-			if smerPohybu.x > 0:
+	if smer.length() > 5:
+		smer = smer.normalized() * rychlost
+		animace.play()
+		
+		if abs(smer.x) > abs(smer.y):
+			if smer.x > 0:
 				animace.animation = "doprava"
 			else:
 				animace.animation = "doleva"
 		else:
-			if smerPohybu.y > 0:
+			if smer.y > 0:
 				animace.animation = "dolu"
 			else:
 				animace.animation = "nahoru"	
 	else:
+		smer = Vector2(0, 0)
+		animace.animation = "stuj"
 		animace.stop()
 
-	novaPozice = aktivniTyp.position + smerPohybu * delta
+	novaPozice = aktivniTyp.position + smer * delta
 
 	novaPozice.x = clamp(novaPozice.x, 0, velikostOkna.x)
 	novaPozice.y = clamp(novaPozice.y, 0, velikostOkna.y)
