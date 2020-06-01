@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nemrtví noob_4_1.png-b7d1d0b453a67ba27bcd7e172efc2cd4.stex"
+path="res://.import/nemrtvy noob_3_3.png-16bacea1efde7a53f892d4e4a7039607.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grafika/monstra/nemrtvy noob/nemrtví noob_4_1.png"
-dest_files=[ "res://.import/nemrtví noob_4_1.png-b7d1d0b453a67ba27bcd7e172efc2cd4.stex" ]
+source_file="res://grafika/monstra/nemrtvy noob/nemrtvy noob_3_3.png"
+dest_files=[ "res://.import/nemrtvy noob_3_3.png-16bacea1efde7a53f892d4e4a7039607.stex" ]
 
 [params]
 
